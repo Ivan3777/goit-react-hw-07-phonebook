@@ -24,7 +24,7 @@ export const ContactListItem = ({ contact }) => {
 
   const handleEdit = () => {
     setIsEdit(prev => !prev);
-    if (isEdit) {
+    if (isEdit && (name !== contact.name || number !== contact.number)) {
       return dispatch(
         editContact({
           ...contact,
